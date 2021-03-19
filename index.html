@@ -506,28 +506,38 @@
           <div class="col-lg-4 col-md-6">
             <div class="contact__form">
               <h5>SEND MESSAGE</h5>
-              <form action="#" method="POST">
+              <form name="casecontact" method="POST">
                 <div class="shadow overflow-hidden card-form sm:rounded-md">
                   <div class="px-4 py-5 sm:p-6">
+                    <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
+                      <strong>Pesan anda berhasil dikirim.</strong>
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                     <div class="grid grid-cols-4 gap-6">
                       <div class="col-span-6 sm:col-span-4">
-                        <label for="first_name" class="block text-sm font-medium text-white">First name</label>
-                        <input type="text" name="first_name" id="first_name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                        <label for="name" class="block text-sm font-medium text-white">Nama Lengkap</label>
+                        <input type="text" name="name" id="name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                       </div>
 
                       <div class="col-span-6 sm:col-span-4">
-                        <label for="email_address" class="block text-sm font-medium text-white">Email address</label>
-                        <input type="text" name="email_address" id="email_address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                        <label for="email" class="block text-sm font-medium text-white">Email</label>
+                        <input type="text" name="email" id="email" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                       </div>
 
                       <div class="col-span-6 sm:col-span-4">
-                        <label for="messange" class="block text-sm font-medium text-white">Email address</label>
-                        <input type="text" name="messange" id="messange" autocomplete="messange" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
-                      </div>
+                        <label for="pesan" class="block text-sm font-medium text-white">Pesan</label>
+                        <div class="mt-1">
+                          <textarea id="pesan" name="pesan" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"></textarea>
+                        </div>  
                     </div>
                   </div>
                   <div class="px-4 py-3 text-left sm:px-6">
-                    <button type="submit" class="site-btn">Send Message</button>
+                    <button type="submit" class="site-btn btn-kirim">Send Message</button>
+
+                    <button class="site-btn btn-loading d-none" type="button" disabled>
+                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      Loading...
+                    </button>
                   </div>
                 </div>
               </form>
@@ -622,5 +632,36 @@
       lightGallery(document.getElementById('lightgallery'));
     </script>
     <script src="js/main.js"></script>
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbx9fOltRWqPmac5WZiQ-3ADLgWTrvM-idrqRPRrETVKm7yxUn_loo-Uv8YabfdH1zEV/exec'
+      const form = document.forms['casecontact']
+
+      const btnKirim = document.querySelector('.btn-kirim');
+      const btnLoading = document.querySelector('.btn-loading');
+      const Alert = document.querySelector('.alert');
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+            Alert.classList.toggle('d-none');
+
+            form.reset()
+            
+            console.log('Success!', response)})
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+
+
+
+
+
   </body>
 </html>
