@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
 
     <link rel="stylesheet" href="css/lightgallery.css" />
+    <link rel="stylesheet" href="css/aos.css" />
 
     <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/main.css" />
@@ -22,7 +23,7 @@
     <!-- Header Section Begin -->
     <header class="header">
       <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" id="mainNav">
           <div class="col-xl-2 col-lg-2 col-sm-12 items-center justify-center">
             <div class="header__logo">
               <a href="./index.html"><img class="icon__logo" src="images/logo.png" alt="" /></a>
@@ -55,7 +56,7 @@
 
     <!-- Menu Mobile Section Begin -->
     <section class="nav">
-      <div class="icon active">
+      <div class="icon active js-scroll-trigger">
         <a href="#home">
           <i class="fas fa-home"></i>
           <p>Home</p>
@@ -112,16 +113,16 @@
         <div class="row d-flex justify-content-center">
           <div class="col-lg-10">
             <div class="row info__panel">
-              <div class="col-lg mb-3">
+              <div class="col-lg col-md-3 mb-3">
                 <div class="services__item">
                   <i class="fa fa-car"></i>
                   <div class="services__text">
-                    <h6>Promo Free Ongkir Se-Indonesia</h6>
+                    <h6>Free Ongkir Se-Indonesia</h6>
                     <p>Kami sering mengadakan promo free ongkir se-Indonesia.</p>
                   </div>
                 </div>
               </div>
-              <div class="col-lg mb-3">
+              <div class="col-lg col-md-3  mb-3">
                 <div class="services__item">
                   <i class="fas fa-money-bill"></i>
                   <div class="services__text">
@@ -130,7 +131,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg mb-3">
+              <div class="col-lg col-md-3  mb-3">
                 <div class="services__item">
                   <i class="fas fa-cogs"></i>
                   <div class="services__text">
@@ -154,12 +155,12 @@
             <h1 class="text-center">Flash <span>Sales</span></h1>
             <div class="underline"></div>
           </div>
-          <div class="col-lg-6 p-0">
+          <div class="col-md-6 p-0">
             <div class="discount__pic">
               <img src="images/discount.jpg" alt="" />
             </div>
           </div>
-          <div class="col-lg-6 p-0">
+          <div class="col-md-6 p-0">
             <div class="discount__text">
               <div class="discount__text__title">
                 <span>Discount</span>
@@ -167,10 +168,10 @@
                 <h5><span>Sale</span> 50%</h5>
               </div>
               <div class="discount__countdown" id="countdown-time">
-                <div class="countdown__item">
+                <!-- <div class="countdown__item">
                   <span>22</span>
                   <p>Days</p>
-                </div>
+                </div> -->
                 <div class="countdown__item">
                   <span>18</span>
                   <p>Hour</p>
@@ -204,7 +205,7 @@
 
         <div class="row property__gallery justify-content-center">
           <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="product__item">
+            <div class="product__item" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine">
               <div class="product__item__pic set-bg" data-setbg="images/product/product-1.jpg">
                 <div class="label new">New</div>
                 <ul class="product__hover">
@@ -215,7 +216,7 @@
               </div>
               <div class="product__item__text">
                 <div class="product__card__name">
-                  <h6><a href="#">Hardcase 3D</a></h6>
+                  <h6><a href="#">Hardcase 3D dfsdfsd sdfs</a></h6>
                   <div class="rating">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -230,9 +231,8 @@
           </div>
 
           <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="border-line">
-              <div class="product__item">
-                <div class="product__item__pic set-bg" data-setbg="images/product/product-2.jpg">
+            <div class="border-line headline">
+              <div class="product__item" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-sine">              <div class="product__item__pic set-bg" data-setbg="images/product/product-2.jpg">
                   <ul class="product__hover">
                     <li>
                       <a href="https://bit.ly/3bYeOvj" target="blank"><span>SHOP NOW</span></a>
@@ -257,7 +257,7 @@
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="border-line">
-              <div class="product__item">
+              <div class="product__item" data-aos="fade-up" data-aos-duration="2000" data-aos-easing="ease-in-sine"> 
                 <div class="product__item__pic set-bg" data-setbg="images/product/product-3.jpg">
                   <ul class="product__hover">
                     <li>
@@ -283,7 +283,7 @@
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="border-line">
-              <div class="product__item">
+              <div class="product__item" data-aos="fade-up" data-aos-duration="2500" data-aos-easing="ease-in-sine"> 
                 <div class="product__item__pic set-bg" data-setbg="images/product/product-4.jpg">
                   <ul class="product__hover">
                     <li>
@@ -309,7 +309,7 @@
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="border-line">
-              <div class="product__item">
+              <div class="product__item" data-aos="fade-up" data-aos-duration="2500">
                 <div class="product__item__pic set-bg" data-setbg="images/product/product-5.jpg">
                   <ul class="product__hover">
                     <li>
@@ -335,7 +335,7 @@
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="border-line">
-              <div class="product__item">
+              <div class="product__item" data-aos="fade-up" data-aos-duration="2000">
                 <div class="product__item__pic set-bg" data-setbg="images/product/product-6.jpg">
                   <ul class="product__hover">
                     <li>
@@ -361,7 +361,7 @@
           </div>
           <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="border-line">
-              <div class="product__item">
+              <div class="product__item" data-aos="fade-up" data-aos-duration="1000">
                 <div class="product__item__pic set-bg" data-setbg="images/product/product-7.jpg">
                   <ul class="product__hover">
                     <li>
@@ -554,9 +554,6 @@
         <div class="row justify-content-evenly">
           <div class="col-lg-4 col-md-6 col-sm-7">
             <div class="footer__about">
-              <div class="footer__logo">
-                <a href="./index.html"><img src="images/logo.png" alt="" /></a>
-              </div>
               <p>PAYMENT PARTNERS</p>
               <div class="footer__payment">
                 <a href="#"><img src="images/payment-1.png" alt="" /></a>
@@ -566,21 +563,18 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-2 col-md-3 col-sm-5">
+          <div class="col-lg-3 col-md-3 col-sm-5">
             <div class="footer__widget">
-              <h6>Quick links</h6>
-              <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blogs</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">FAQ</a></li>
-              </ul>
+                <p><a href="https://saweria.co/ramsonrjg" target="blank">Kirim dukungan ke ramsonrjg</a></p>
+              <div class="footer__logo">
+                <img src="images/saweria.png" alt="" />
+              </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-8 col-sm-8">
             <div class="footer__newslatter">
-              <h6>NEWSLETTER</h6>
+              <h6>Contact Email</h6>
               <form action="#">
                 <input type="text" placeholder="Email" />
                 <button type="submit" class="site-btn">Subscribe</button>
@@ -628,12 +622,19 @@
     <script src="js/lg-fullscreen.js"></script>
     <script src="js/lg-zoom.js"></script>
     <script src="js/lg-share.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/aos.js"></script>
     <script>
       lightGallery(document.getElementById('lightgallery'));
     </script>
     <script src="js/main.js"></script>
 
     <script>
+
+      AOS.init();
+
+
+
       const scriptURL = 'https://script.google.com/macros/s/AKfycbx9fOltRWqPmac5WZiQ-3ADLgWTrvM-idrqRPRrETVKm7yxUn_loo-Uv8YabfdH1zEV/exec'
       const form = document.forms['casecontact']
 
@@ -657,6 +658,37 @@
             console.log('Success!', response)})
           .catch(error => console.error('Error!', error.message))
       })
+
+
+      
+    /*------------------
+        CountDown
+    --------------------*/
+    // For demo preview start
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    if(mm == 12) {
+        mm = '01';
+        yyyy = yyyy + 1;
+    } else {
+        mm = parseInt(mm) + 1;
+        mm = String(mm).padStart(2, '0');
+    }
+    var timerdate = mm + '/' + dd + '/' + yyyy;
+    // For demo preview end
+
+
+    // Uncomment below and use your date //
+
+    /* var timerdate = "2020/12/30" */
+
+	$("#countdown-time").countdown(timerdate, function(event) {
+        $(this).html(event.strftime("<div class='countdown__item'><span>%D</span> <p>Day</p> </div>" + "<div class='countdown__item'><span>%H</span> <p>Hour</p> </div>" + "<div class='countdown__item'><span>%M</span> <p>Min</p> </div>" + "<div class='countdown__item'><span>%S</span> <p>Sec</p> </div>"));
+    });
+
     </script>
 
 
