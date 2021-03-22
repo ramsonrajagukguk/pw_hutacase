@@ -216,7 +216,7 @@
               </div>
               <div class="product__item__text">
                 <div class="product__card__name">
-                  <h6><a href="#">Hardcase 3D dfsdfsd sdfs</a></h6>
+                  <h6><a href="#">Hardcase 3D </a></h6>
                   <div class="rating">
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
@@ -504,19 +504,20 @@
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="contact__form">
+                <div class="contact__form">
               <h5>SEND MESSAGE</h5>
-              <form name="casecontact" method="POST">
+              <form id="signupForm"  name="casecontact" method="POST">
                 <div class="shadow overflow-hidden card-form sm:rounded-md">
                   <div class="px-4 py-5 sm:p-6">
                     <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
                       <strong>Pesan anda berhasil dikirim.</strong>
                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                    <div class="grid grid-cols-4 gap-6">
+                    <div class="grid grid-cols-4 gap-6">                      
                       <div class="col-span-6 sm:col-span-4">
                         <label for="name" class="block text-sm font-medium text-white">Nama Lengkap</label>
                         <input type="text" name="name" id="name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required />
+                        <div class="labelfrom"></div>
                       </div>
 
                       <div class="col-span-6 sm:col-span-4">
@@ -575,9 +576,9 @@
           <div class="col-lg-4 col-md-8 col-sm-8">
             <div class="footer__newslatter">
               <h6>Contact Email</h6>
-              <form action="#">
+              <form action="" target="blank">
                 <input type="text" placeholder="Email" />
-                <button type="submit" class="site-btn">Subscribe</button>
+                <button type="submit" class="site-btn"> <a href="https://www.youtube.com/channel/UCVTCKVQf3deWY7g9WcC3Dzg?sub_confirmation=1" target="blank">Subscribe</a>  </button>
               </form>
               <div class="footer__social">
                 <a href="https://www.facebook.com/ramsonrajagukguk/" target="blank"><i class="fab fa-facebook"></i></a>
@@ -596,10 +597,9 @@
                 <script>
                   document.write(new Date().getFullYear());
                 </script>
-                All rights reserved | This template is made with <i class="fab fa-github" aria-hidden="true"></i> by <a href="https://github.com/ramsonrajagukguk" target="_blank">ramson</a>
+               | This made with <i class="fab fa-github" aria-hidden="true"></i> by <a href="https://github.com/ramsonrajagukguk" target="_blank">ramson</a>
               </p>
             </div>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </div>
         </div>
       </div>
@@ -607,11 +607,10 @@
     <!-- Footer Section End -->
 
     <!-- WA -->
-    <div id="myDiv"></div>
+    <div class="wa" id="myDiv"></div>
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
-
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/anime.min.js"></script>
@@ -623,6 +622,7 @@
     <script src="js/lg-zoom.js"></script>
     <script src="js/lg-share.js"></script>
     <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
     <script src="js/aos.js"></script>
     <script>
       lightGallery(document.getElementById('lightgallery'));
@@ -631,7 +631,76 @@
 
     <script>
 
+    $.validator.setDefaults( {
+			submitHandler: function () {
+				alert( "submitted!" );
+			}
+		} );
+
+    $( document ).ready( function () {
+      $( "#signupForm1" ).validate( {
+				rules: {
+					firstname1: "required",
+					lastname1: "required",
+					username1: {
+						required: true,
+						minlength: 2
+					},
+					email1: {
+						required: true,
+						email: true
+					},
+				},
+				messages: {
+					firstname1: "Please enter your firstname",
+					lastname1: "Please enter your lastname",
+					username1: {
+						required: "Please enter a username",
+						minlength: "Your username must consist of at least 2 characters"
+					},
+					email1: "Please enter a valid email address",
+					agree1: "Please accept our policy"
+				},
+				errorElement: "em",
+				errorPlacement: function ( error, element ) {
+					// Add the `help-block` class to the error element
+					error.addClass( "help-block" );
+
+					// Add `has-feedback` class to the parent div.form-group
+					// in order to add icons to inputs
+					element.parents( ".col-sm-5" ).addClass( "has-feedback" );
+
+					if ( element.prop( "type" ) === "checkbox" ) {
+						error.insertAfter( element.parent( "label" ) );
+					} else {
+						error.insertAfter( element );
+					}
+
+					// Add the span element, if doesn't exists, and apply the icon classes to it.
+					if ( !element.next( "span" )[ 0 ] ) {
+						$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+					}
+				},
+				success: function ( label, element ) {
+					// Add the span element, if doesn't exists, and apply the icon classes to it.
+					if ( !$( element ).next( "span" )[ 0 ] ) {
+						$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+					}
+				},
+				highlight: function ( element, errorClass, validClass ) {
+					$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+					$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+				},
+				unhighlight: function ( element, errorClass, validClass ) {
+					$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+					$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+				}
+			} );
+    })
+    
       AOS.init();
+
+
 
 
 
@@ -641,11 +710,13 @@
       const btnKirim = document.querySelector('.btn-kirim');
       const btnLoading = document.querySelector('.btn-loading');
       const Alert = document.querySelector('.alert');
+      var Form = document.querySelectorAll('.needs-validation')
     
       form.addEventListener('submit', e => {
         e.preventDefault()
         btnLoading.classList.toggle('d-none');
         btnKirim.classList.toggle('d-none');
+        form.classList.add('was-validated')
 
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
           .then(response => {
@@ -690,10 +761,6 @@
     });
 
     </script>
-
-
-
-
 
   </body>
 </html>

@@ -12,13 +12,12 @@
   --text-white: #fff;
   --text-orange: #e8492c;
   --bg-abu-1: #4a4766;
-  --textSmall:12px;
-  --textdetails:14px;
-  --textSubtitle:18px;
-  --textSubtitle2:16px;
-  --textTitle:24px;
-  --textMain:32px;
-
+  --textSmall: 12px;
+  --textdetails: 14px;
+  --textSubtitle: 18px;
+  --textSubtitle2: 16px;
+  --textTitle: 24px;
+  --textMain: 32px;
 }
 
 html,
@@ -187,12 +186,13 @@ body {
 
   .product__item__text h6 a {
     font-size: 32px;
-    background: chocolate;
     color: var(--text-white);
   }
 
+  .wa {
+    display: none;
+  }
 }
-
 
 .nav .icon {
   flex: 1;
@@ -340,16 +340,16 @@ body {
 }
 
 @media only screen and (min-width: 1600px) and (max-width: 1900px) {
-	.header {
-		padding: 0 85px;
-	}
+  .header {
+    padding: 0 85px;
+  }
 }
 
-@media  (min-width: 1200px) {
+@media (min-width: 1200px) {
   .header__menu ul li {
     margin-right: 60px;
-	}
-	.header {
+  }
+  .header {
     padding: 0 60px;
   }
 
@@ -358,20 +358,19 @@ body {
     position: relative;
     justify-content: center;
   }
-  
 
   .product__item__text h6 a {
     font-size: 20px;
   }
 
-
+  .footer__newslatter {
+    margin-bottom: 30px;
+  }
 }
-
 
 /*---------------------
   Services
 -----------------------*/
-
 
 .services {
   position: relative;
@@ -380,7 +379,7 @@ body {
 }
 
 .info__panel {
- background: var(--bg-color);
+  background: var(--bg-color);
   -webkit-box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
   box-shadow: 0px 5px 10px var(--bg-abu);
   margin-top: -20px;
@@ -467,9 +466,30 @@ body {
   .services__item p {
     font-size: 12px;
   }
-  .footer__copyright__text {
-    margin-top: 90px;
+  .footer__newslatter {
+    margin-bottom: 60px;
   }
+  .footer__copyright__text {
+    margin-top: -50px;
+    margin-bottom: 50px;
+  }
+
+  .footer__copyright__text p {
+    font-size: var(--textSmall);
+  }
+
+  .countdown__item span {
+    font-size: 20px;
+  }
+  .countdown__item p {
+    font-size: 12px;
+  }
+}
+
+.pesan__nama {
+  display: none;
+  color: red;
+  margin: 5px;
 }
 
 .discount__text__title {
@@ -513,7 +533,7 @@ body {
   }
 
   .discount__text__title h5 {
-   font-size: var(--textTitle);
+    font-size: var(--textTitle);
   }
 
   .discount__text__title h5 span {
@@ -522,6 +542,13 @@ body {
     margin-right: 4px;
   }
 
+  .countdown__item span {
+    font-size: 30px;
+  }
+
+  .countdown__item p {
+    font-size: 14px;
+  }
 }
 
 .discount__text__title h5 {
@@ -551,7 +578,6 @@ body {
 }
 
 .countdown__item span {
-  font-size: 30px;
   font-weight: 600;
   color: var(--text-white);
   display: inline-block;
@@ -698,15 +724,12 @@ body {
   border-radius: 100%;
 }
 
-
-
 .product__item__text {
   /* display: flex; */
   /* justify-content: start; */
   text-align: center;
   padding: 20px 10px;
 }
-
 
 .product__item__text h6 a {
   /* font-size: 20px; */
@@ -852,7 +875,6 @@ body {
   display: flex;
   margin-bottom: 20px;
   justify-content: center;
-  
 }
 
 .footer__payment a {
@@ -863,12 +885,12 @@ body {
 .footer__payment a:last-child {
   margin-right: 0;
 }
-.footer__payment a img{
+.footer__payment a img {
   width: 80px;
   height: 80px;
 }
 
-.footer__widget{
+.footer__widget {
   text-align: center;
 }
 
@@ -876,7 +898,6 @@ body {
   position: relative;
   text-transform: uppercase;
   margin-bottom: 20px;
-  
 }
 
 .footer__widget p a {
@@ -886,10 +907,6 @@ body {
 .footer__widget p a:hover {
   margin-left: 5px;
   color: var(--text-orange);
-}
-
-.footer__newslatter {
-  margin-bottom: 30px;
 }
 
 .footer__newslatter h6 {
@@ -971,7 +988,6 @@ body {
   border-top: 1px solid #e1e1e1;
   padding: 5px 0 5px;
   text-align: center;
-  margin-top: 10px;
 }
 
 .footer__copyright__text p {
