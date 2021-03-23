@@ -77,14 +77,15 @@
       <div class="icon">
         <a href="#contact">
             <i class="fas fa-phone"></i>
-            <p>Contant</p>
+            <p>Contacts</p>
           </a>
     </section>
     <!-- Menu Mobile Section Start -->
 
     <!-- Banner Section Begin -->
-    <section class="py-2 banner set-bg" data-setbg="images/banner-1.jpg">
+    <section class="py-4 banner set-bg" data-setbg="images/banner-1.jpg">
       <div class="container mx-auto justity-center items-center p-6">
+        <h1 class="banner__text text-center">Buat Case HP sendiri murah dan keren</h1>
         <div class="lg:w-2/3 mx-auto justity-center items-center">
           <div class="justity-center">
             <div class="swiper-container">
@@ -504,50 +505,56 @@
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-                <div class="contact__form">
-              <h5>SEND MESSAGE</h5>
-              <form id="signupForm"  name="casecontact" method="POST">
-                <div class="shadow overflow-hidden card-form sm:rounded-md">
-                  <div class="px-4 py-5 sm:p-6">
-                    <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
-                      <strong>Pesan anda berhasil dikirim.</strong>
-                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    <div class="grid grid-cols-4 gap-6">                      
-                      <div class="col-span-6 sm:col-span-4">
-                        <label for="name" class="block text-sm font-medium text-white">Nama Lengkap</label>
-                        <input type="text" name="name" id="name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required />
-                        <div class="labelfrom"></div>
-                      </div>
-
-                      <div class="col-span-6 sm:col-span-4">
-                        <label for="email" class="block text-sm font-medium text-white">Email</label>
-                        <input type="email" name="email" id="email" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required />
-                      </div>
-
-                      <div class="col-span-6 sm:col-span-4">
-                        <label for="pesan" class="block text-sm font-medium text-white">Pesan</label>
-                        <div class="mt-1">
-                          <textarea id="pesan" name="pesan" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" required></textarea>
-                        </div>  
-                    </div>
-                  </div>
-                  <div class="px-4 py-3 text-left sm:px-6">
-                    <button type="submit" class="site-btn btn-kirim">Send Message</button>
-
-                    <button class="site-btn btn-loading d-none" type="button" disabled>
-                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                      Loading...
-                    </button>
-                  </div>
+           
+              <div class="contact__form">
+                <h5>SEND MESSAGE</h5>
+                <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
+                  <strong>Pesan anda berhasil dikirim.</strong>
                 </div>
-              </form>
+                <form id="signupForm1"  name="casecontact" method="post" >
+                  <div class="shadow overflow-hidden card-form sm:rounded-md">
+                    <div class="px-4 py-5 sm:p-6">
+                      <div class="grid grid-cols-4 gap-6">                      
+                        <div class="col-span-6 sm:col-span-4">
+                          <label for="name" class="block text-sm font-medium text-white">Nama Lengkap</label>
+                            <input type="text" name="nama" id="name" autocomplete="given-name" class=" form-control mt-1  focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required/>
+
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-4">
+                          <label for="email" class="block text-sm font-medium text-white">Email</label>
+                          <input type="email" name="email" id="email" autocomplete="email" class="form-control mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required/>
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-4">
+                          <label for="pesan" class="block text-sm font-medium text-white">Pesan</label>
+                          <div class="mt-1">
+                            <textarea id="pesan" name="pesan" rows="3" class="form-control shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" required></textarea>
+                            <div class="invalid-feedback">
+                              Please enter a message in the textarea.
+                            </div>  
+                          </div>
+                      </div>
+                    </div>
+
+
+                    <div class="px-4 py-3 text-left sm:px-6">
+                      <button type="submit" class="site-btn btn-kirim">Send Message</button>
+
+                      <button class="site-btn btn-loading d-none" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Loading...
+                      </button>
+                    </div>
+                  </div>
+                </form>
             </div>
           </div>
         </div>
       </div>
     </section>
     <!-- Contact Section End -->
+  
 
     <!-- Footer Section Begin -->
     <footer class="footer">
@@ -629,109 +636,13 @@
     </script>
     <script src="js/main.js"></script>
 
-    <script>
-
-    $.validator.setDefaults( {
-			submitHandler: function () {
-				alert( "submitted!" );
-			}
-		} );
-
-    $( document ).ready( function () {
-      $( "#signupForm1" ).validate( {
-				rules: {
-					firstname1: "required",
-					lastname1: "required",
-					username1: {
-						required: true,
-						minlength: 2
-					},
-					email1: {
-						required: true,
-						email: true
-					},
-				},
-				messages: {
-					firstname1: "Please enter your firstname",
-					lastname1: "Please enter your lastname",
-					username1: {
-						required: "Please enter a username",
-						minlength: "Your username must consist of at least 2 characters"
-					},
-					email1: "Please enter a valid email address",
-					agree1: "Please accept our policy"
-				},
-				errorElement: "em",
-				errorPlacement: function ( error, element ) {
-					// Add the `help-block` class to the error element
-					error.addClass( "help-block" );
-
-					// Add `has-feedback` class to the parent div.form-group
-					// in order to add icons to inputs
-					element.parents( ".col-sm-5" ).addClass( "has-feedback" );
-
-					if ( element.prop( "type" ) === "checkbox" ) {
-						error.insertAfter( element.parent( "label" ) );
-					} else {
-						error.insertAfter( element );
-					}
-
-					// Add the span element, if doesn't exists, and apply the icon classes to it.
-					if ( !element.next( "span" )[ 0 ] ) {
-						$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
-					}
-				},
-				success: function ( label, element ) {
-					// Add the span element, if doesn't exists, and apply the icon classes to it.
-					if ( !$( element ).next( "span" )[ 0 ] ) {
-						$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
-					}
-				},
-				highlight: function ( element, errorClass, validClass ) {
-					$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-					$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
-				},
-				unhighlight: function ( element, errorClass, validClass ) {
-					$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-					$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
-				}
-			} );
-    })
-    
+    <script>    
       AOS.init();
 
-
-
-
-
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbx9fOltRWqPmac5WZiQ-3ADLgWTrvM-idrqRPRrETVKm7yxUn_loo-Uv8YabfdH1zEV/exec'
-      const form = document.forms['casecontact']
-
-      const btnKirim = document.querySelector('.btn-kirim');
-      const btnLoading = document.querySelector('.btn-loading');
-      const Alert = document.querySelector('.alert');
-      var Form = document.querySelectorAll('.needs-validation')
-    
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        btnLoading.classList.toggle('d-none');
-        btnKirim.classList.toggle('d-none');
-        form.classList.add('was-validated')
-
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => {
-            btnLoading.classList.toggle('d-none');
-            btnKirim.classList.toggle('d-none');
-            Alert.classList.toggle('d-none');
-
-            form.reset()
-            
-            console.log('Success!', response)})
-          .catch(error => console.error('Error!', error.message))
-      })
-
-
-      
+     
+			
+	
+     
     /*------------------
         CountDown
     --------------------*/

@@ -259,8 +259,9 @@ body {
 }
 
 .banner {
-  margin-top: 50px;
+  padding-top: 70px;
   height: 500px;
+  padding-bottom: 30px;
 }
 
 .banner__text span {
@@ -328,7 +329,7 @@ body {
 .swiper-container {
   width: 100%;
   padding-top: 30px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   z-index: 0;
 }
 
@@ -1120,5 +1121,32 @@ body {
   border: 3px solid #04070a;
 }
 .home .demo-gallery {
-  padding-bottom: 80px;
+  padding-bottom: 10px;
+}
+
+.has-error {
+  color: #d8000c;
+}
+
+.has-success {
+  color: #4f8a10;
+}
+
+.banner__text {
+  text-transform: capitalize;
+  padding: 10px 0 5px;
+  color: var(--text-orange);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .banner__text {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .banner__text {
+    font-size: 2.5rem;
+  }
 }

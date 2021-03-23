@@ -1,5 +1,100 @@
 'use strict';
 $(function () {
+  $.validator.setDefaults({
+    submitHandler: function () {
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbx9fOltRWqPmac5WZiQ-3ADLgWTrvM-idrqRPRrETVKm7yxUn_loo-Uv8YabfdH1zEV/exec';
+      const form = document.forms['casecontact'];
+
+      const btnKirim = document.querySelector('.btn-kirim');
+      const btnLoading = document.querySelector('.btn-loading');
+      const Alert = document.querySelector('.alert');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+
+        fetch(scriptURL, {method: 'POST', body: new FormData(form)})
+          .then((response) => {
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+            Alert.classList.toggle('d-none');
+
+            form.reset();
+
+            console.log('Success!', response);
+          })
+          .catch((error) => console.error('Error!', error.message));
+      });
+    },
+  });
+
+  $('#signupForm1').validate({
+    rules: {
+      nama: 'required',
+      pesan: 'required',
+      nama: {
+        required: true,
+      },
+      password1: {
+        required: true,
+        minlength: 5,
+      },
+      confirm_password1: {
+        required: true,
+        minlength: 5,
+        equalTo: '#password1',
+      },
+      email1: {
+        required: true,
+        email: true,
+      },
+      agree1: 'required',
+    },
+    messages: {
+      nama: 'Please enter your username',
+      pesan: 'Please enter your messages',
+      username1: {
+        required: 'Please enter a username',
+      },
+      email1: 'Please enter a valid email address',
+    },
+    errorElement: 'em',
+    errorPlacement: function (error, element) {
+      // Add the `help-block` class to the error element
+      error.addClass('help-block');
+
+      // Add `has-feedback` class to the parent div.form-group
+      // in order to add icons to inputs
+      element.parents('.col-span-6').addClass('has-feedback');
+
+      if (element.prop('type') === 'checkbox') {
+        error.insertAfter(element.parent('label'));
+      } else {
+        error.insertAfter(element);
+      }
+
+      // Add the span element, if doesn't exists, and apply the icon classes to it.
+      if (!element.next('span')[0]) {
+        $("<span class='glyphicon glyphicon-remove form-control-feedback'></span>").insertAfter(element);
+      }
+    },
+    success: function (label, element) {
+      // Add the span element, if doesn't exists, and apply the icon classes to it.
+      if (!$(element).next('span')[0]) {
+        $("<span class='glyphicon glyphicon-ok form-control-feedback'></span>").insertAfter($(element));
+      }
+    },
+    highlight: function (element, errorClass, validClass) {
+      $(element).parents('.col-span-6').addClass('has-error').removeClass('has-success');
+      $(element).next('span').addClass('glyphicon-remove').removeClass('glyphicon-ok');
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      $(element).parents('.col-span-6').addClass('has-success').removeClass('has-error');
+      $(element).next('span').addClass('glyphicon-ok').removeClass('glyphicon-remove');
+    },
+  });
+
   $('#myDiv').venomButton({
     phone: '+62 852 7013 6884',
     message: 'Saya mau pesan case 3d...',
