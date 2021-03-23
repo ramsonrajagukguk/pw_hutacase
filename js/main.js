@@ -36,16 +36,7 @@ $(function () {
       nama: {
         required: true,
       },
-      password1: {
-        required: true,
-        minlength: 5,
-      },
-      confirm_password1: {
-        required: true,
-        minlength: 5,
-        equalTo: '#password1',
-      },
-      email1: {
+      email: {
         required: true,
         email: true,
       },
@@ -54,10 +45,10 @@ $(function () {
     messages: {
       nama: 'Please enter your username',
       pesan: 'Please enter your messages',
-      username1: {
+      nama: {
         required: 'Please enter a username',
       },
-      email1: 'Please enter a valid email address',
+      email: 'Please enter a valid email address',
     },
     errorElement: 'em',
     errorPlacement: function (error, element) {
